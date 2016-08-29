@@ -1,24 +1,23 @@
-
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 29, 2016 at 07:22 AM
--- Server version: 10.0.20-MariaDB
--- PHP Version: 5.2.17
+-- Generation Time: Aug 30, 2016 at 01:52 
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 7.0.8
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `u902002681_skrip`
+-- Database: `skripsi-unwaha`
 --
 
 -- --------------------------------------------------------
@@ -27,14 +26,13 @@ SET time_zone = "+00:00";
 -- Table structure for table `informasi`
 --
 
-CREATE TABLE IF NOT EXISTS `informasi` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `informasi` (
+  `id` int(11) NOT NULL,
   `judul` varchar(255) NOT NULL,
   `isi` text NOT NULL,
   `waktuubah` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `tampil` tinyint(4) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+  `tampil` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `informasi`
@@ -52,7 +50,7 @@ INSERT INTO `informasi` (`id`, `judul`, `isi`, `waktuubah`, `tampil`) VALUES
 -- Table structure for table `skripsi`
 --
 
-CREATE TABLE IF NOT EXISTS `skripsi` (
+CREATE TABLE `skripsi` (
   `nim` varchar(16) NOT NULL,
   `judul1` text,
   `desjudul1` text NOT NULL,
@@ -65,8 +63,7 @@ CREATE TABLE IF NOT EXISTS `skripsi` (
   `pembimbing1` tinyint(4) DEFAULT NULL,
   `pembimbing2` tinyint(4) DEFAULT NULL,
   `pembimbing` tinyint(4) NOT NULL DEFAULT '0',
-  `password` varchar(100) NOT NULL,
-  PRIMARY KEY (`nim`)
+  `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -158,12 +155,11 @@ INSERT INTO `skripsi` (`nim`, `judul1`, `desjudul1`, `judul2`, `desjudul2`, `dis
 -- Table structure for table `spi_category`
 --
 
-CREATE TABLE IF NOT EXISTS `spi_category` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `spi_category` (
+  `id` int(11) NOT NULL,
   `nama` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `penjelasan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `penjelasan` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -171,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `spi_category` (
 -- Table structure for table `spi_pengurus`
 --
 
-CREATE TABLE IF NOT EXISTS `spi_pengurus` (
+CREATE TABLE `spi_pengurus` (
   `username` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `hak` smallint(6) NOT NULL
@@ -187,12 +183,40 @@ INSERT INTO `spi_pengurus` (`username`, `password`, `hak`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_jadwal`
+--
+
+CREATE TABLE `tbl_jadwal` (
+  `id_jadwal` int(11) NOT NULL,
+  `jenis_kegiatan` text NOT NULL,
+  `mulai_pelaksanaan` varchar(100) NOT NULL,
+  `selesai_pelaksanaan` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_jadwal`
+--
+
+INSERT INTO `tbl_jadwal` (`id_jadwal`, `jenis_kegiatan`, `mulai_pelaksanaan`, `selesai_pelaksanaan`) VALUES
+(1, 'Pendaftaran dan Pengumpulan Judul Skripsi', '25 September 2015', '31 Oktober 2015'),
+(2, 'Seminar Proposal Skripsi', '12 Desember 2015', '-'),
+(3, 'Seminar Hasil Skripsi', '08 Mei 2016', '-'),
+(4, 'UAS SEMESTER 8', '14-16 Mei 2016', '-'),
+(5, 'Ujian Skripsi', '21 Mei 2016', '-'),
+(6, 'Pengumpulan Skripsi (setelah direvisi dan siap dijilid)', '28 Mei 2016', '-'),
+(7, 'Yudisium', '-', '-'),
+(8, 'Wisuda', '-', '-');
+
+-- --------------------------------------------------------
+
+--
 -- Stand-in structure for view `vpembimbing`
 --
-CREATE TABLE IF NOT EXISTS `vpembimbing` (
+CREATE TABLE `vpembimbing` (
 `pembimbing` tinyint(4)
 ,`disetujui` tinyint(4)
 );
+
 -- --------------------------------------------------------
 
 --
@@ -200,8 +224,55 @@ CREATE TABLE IF NOT EXISTS `vpembimbing` (
 --
 DROP TABLE IF EXISTS `vpembimbing`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`u902002681_skrip`@`localhost` SQL SECURITY INVOKER VIEW `vpembimbing` AS select `skripsi`.`pembimbing1` AS `pembimbing`,`skripsi`.`disetujui` AS `disetujui` from `skripsi` union all select `skripsi`.`pembimbing2` AS `pembimbing`,`skripsi`.`disetujui` AS `disetujui` from `skripsi`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`u902002681_skrip`@`localhost` SQL SECURITY INVOKER VIEW `vpembimbing`  AS  select `skripsi`.`pembimbing1` AS `pembimbing`,`skripsi`.`disetujui` AS `disetujui` from `skripsi` union all select `skripsi`.`pembimbing2` AS `pembimbing`,`skripsi`.`disetujui` AS `disetujui` from `skripsi` ;
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `informasi`
+--
+ALTER TABLE `informasi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `skripsi`
+--
+ALTER TABLE `skripsi`
+  ADD PRIMARY KEY (`nim`);
+
+--
+-- Indexes for table `spi_category`
+--
+ALTER TABLE `spi_category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_jadwal`
+--
+ALTER TABLE `tbl_jadwal`
+  ADD PRIMARY KEY (`id_jadwal`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `informasi`
+--
+ALTER TABLE `informasi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `spi_category`
+--
+ALTER TABLE `spi_category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tbl_jadwal`
+--
+ALTER TABLE `tbl_jadwal`
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
