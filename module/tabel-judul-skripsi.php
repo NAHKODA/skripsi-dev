@@ -17,7 +17,7 @@
         <div class="col-md-12">
           <div class="panel panel-default">
             <div class="panel-heading" style="color: #fff;background-color: #16a085;border-color:#16a085;font-family: 'ubuntu'; font-weight:bold;font-size:35px">
-              <h3 class="panel-title">Semua Judul Skripsi</h3>
+              <h3 class="panel-title"><?php echo $breadcrumb ?></h3>
             </div>
             <div class="panel-body">
               Panel content
