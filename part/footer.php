@@ -1,5 +1,5 @@
       <footer>
-        <p>&copy; 2016 Company, Inc.</p>
+        <p>Copyright &copy; 2016 Universitas KH. A. Wahab Hasbullah, All Rights Reserved.</p>
       </footer>
     </div>
     <script src="<?php echo $config['base_url'] ?>assets/js/jquery.min.js"></script>
