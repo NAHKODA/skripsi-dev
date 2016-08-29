@@ -30,10 +30,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="index.php?action=semua-judul/" style="color:#fff"><i class="fa fa-folder-open-o"></i> Semua Judul</a></li>
-              <li><a href="index.php?action=teknik-informatika/" style="color:#fff"><i class="fa fa-folder-open-o"></i> Teknik Informatika</a></li>
-              <li><a href="index.php?action=sistem-informasi/" style="color:#fff"><i class="fa fa-folder-open-o"></i> Sistem Informasi</a></li>
-              <li><a href="index.php?action=statistik/" style="color:#fff"><i class="fa fa-pie-chart"></i> Statistik</a></li>
+              <li><a href="index.php?action=semua-judul" style="color:#fff"><i class="fa fa-folder-open-o"></i> Semua Judul</a></li>
+              <li><a href="index.php?action=teknik-informatika" style="color:#fff"><i class="fa fa-folder-open-o"></i> Teknik Informatika</a></li>
+              <li><a href="index.php?action=sistem-informasi" style="color:#fff"><i class="fa fa-folder-open-o"></i> Sistem Informasi</a></li>
+              <li><a href="index.php?action=statistik" style="color:#fff"><i class="fa fa-pie-chart"></i> Statistik</a></li>
             </ul>
         </div>
       </div>
