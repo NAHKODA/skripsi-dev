@@ -3,7 +3,7 @@
       <div class="container" style="color:#fff">
         <h2 style="font-family: 'Lato'; font-weight:bold;font-size:35px">Universitas KH. A. Wahab Hasbullah</h2>
         <p style="font-family: 'Lato'; font-weight:bold;font-size:20px">Untuk mengajukan sebuah judul skripsi mahasiswa diharuskan untuk masuk panel system dan mulai mengajukan sebuah judul skripsi dan minimal mengajukan 2 buah judul skripsi.</p>
-        <p><a class="btn btn-default btn-lg" href="mahasiswa" role="button"><i class="fa fa-lock"></i> Masuk Mahasiswa <i class="fa fa-long-arrow-right"></i></a></p>
+        <p><a class="btn btn-default btn-lg" href="mahasiswa/" role="button"><i class="fa fa-lock"></i> Masuk Mahasiswa <i class="fa fa-long-arrow-right"></i></a></p>
       </div>
     </div>
 
