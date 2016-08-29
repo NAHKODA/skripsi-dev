@@ -33,7 +33,8 @@
                       </thead>
                       <tbody>
                           <?php
-       
+                          //include config
+                          include('./library/config.php');
                           //include environment 
                           include('./library/environment.php');
                           //include koneksi database   

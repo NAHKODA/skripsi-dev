@@ -9,8 +9,8 @@
     <meta name="author" content="Fika Ridaul Maulayya">
     <link rel="icon" href="favicon.ico">
     <title>SKRIPSI - Teknologi Informasi UNWAHA</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+    <link href="<?php echo $config['base_url'] ?>assets/fonts/fonts.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="<?php echo $config['base_url'] ?>assets/css/font-awesome/css/font-awesome.css">
     <link href="<?php echo $config['base_url'] ?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo $config['base_url'] ?>assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <link href="<?php echo $config['base_url'] ?>assets/css/jumbotron.css" rel="stylesheet">

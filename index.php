@@ -26,17 +26,17 @@
             require "module/home.php";
 
         }elseif ($_GET['action'] == "semua-judul") {
-        	$kode_prodi = '';
+        	$kode_prodi = '0';
         	$breadcrumb = 'Semua judul';
             require "module/tabel-judul-skripsi.php";
         
         }elseif ($_GET['action'] == "teknik-informatika") {
-        	$kode_prodi = '';
+        	$kode_prodi = '1';
         	$breadcrumb = 'Teknik Informatika';
             require "module/tabel-judul-skripsi.php";
         
         }elseif ($_GET['action'] == "sistem-informasi") {
-        	$kode_prodi = '';
+        	$kode_prodi = '2';
         	$breadcrumb = 'Sistem Informasi';
             require "module/tabel-judul-skripsi.php";
         
