@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" style="color: #fff;background-color: #16a085;border-color:#16a085;">
               <h3 class="panel-title">Panel title</h3>
             </div>
             <div class="panel-body">
@@ -20,7 +20,7 @@
             </div>
           </div>
           <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" style="color: #fff;background-color: #16a085;border-color:#16a085;">
               <h3 class="panel-title">Panel title</h3>
             </div>
             <div class="panel-body">
