@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-    <title>Jumbotron Template for Bootstrap</title>
+    <title>SKRIPSI - Teknologi Informasi UNWAHA</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
     <link href="<?php echo $config['base_url'] ?>assets/css/bootstrap.min.css" rel="stylesheet">
