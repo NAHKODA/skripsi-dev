@@ -2,43 +2,38 @@
 	<table class="table table-bordered table-striped">
 	    <thead>
 	      <tr>
-	        <th>JENIS KEGIATAN</th>
-	        <th>WAKTU PELAKSANAAN</th>
+	      	<th class="text-center">No.</th>
+	        <th class="text-center">Jenis Kegiatan</th>
+	        <th class="text-center">Waktu Pelaksanaan</th>
+	        <th class="text-center">Waktu Selesai</th>
 	      </tr>
 	    </thead>
 	    <tbody>
+            <?php
+                //include environment 
+                include('./library/environment.php');
+                //include koneksi database   
+                include('./library/database.php');
+                $query  = "SELECT *  FROM tbl_jadwal";
+                $no     = 1;
+                $result =  mysqli_query($connect, $query);
+                while ($row = mysqli_fetch_array($result)) {
+	                //get data
+	                $jenis_kegiatan 		= $row['jenis_kegiatan'];
+	                $mulai_pelaksanaan		= $row['mulai_pelaksanaan'];
+	                $selesai_pelaksanaan	= $row['selesai_pelaksanaan'];
+                
+            ?>	    
 	      <tr>
-	        <td>Pendaftaran dan Pengumpulan Judul Skripsi</td>
-	        <td>25 September 2015 - 31 Oktober 2015</td>
+	      	<td class="text-center"><?php echo $no ?></td>
+	        <td><?php echo $jenis_kegiatan ?></td>
+	        <td class="text-center"><?php echo $mulai_pelaksanaan ?></td>
+	        <td class="text-center"><?php echo $selesai_pelaksanaan ?></td>
 	      </tr>
-	      <tr>
-	        <td>Seminar Proposal Skripsi</td>
-	        <td>12 Desember 2015</td>
-	      </tr>
-	      <tr>
-	        <td>Seminar Hasil Skripsi</td>
-	        <td>08 Mei 2016</td>
-	      </tr>
-	      <tr>
-	        <td>UAS SEMESTER 8</td>
-	        <td>14-16 Mei 2016</td>
-	      </tr>
-	      <tr>
-	        <td>Ujian Skripsi</td>
-	        <td>21 Mei 2016</td>
-	      </tr>
-	      <tr>
-	        <td>Pengumpulan Skripsi (setelah direvisi dan siap dijilid)</td>
-	        <td>28 Mei 2016</td>
-	      </tr>
-	      <tr>
-	        <td>Yudisium</td>
-	        <td>-</td>
-	      </tr> 
-	      <tr>
-	        <td>Wisuda</td>
-	        <td>-</td>
-	      </tr>                              
+            <?php
+                $no++;
+                }
+            ?>	      
 	    </tbody>
 	</table>
 </div>
