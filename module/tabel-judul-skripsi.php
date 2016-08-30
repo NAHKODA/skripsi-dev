@@ -21,14 +21,21 @@
             </div>
             <div class="panel-body">
               <div class="table-responsive">               
-                  <table id="data-alumni" class="table table-bordered">
+                  <div class="alert alert-success" style="font-family:'ubuntu'">
+                     warna judul skripsi yang disetujui
+                  </div>
+                  <div class="alert alert-danger" style="font-family:'ubuntu'">
+                     warna judul skripsi yang belum atau tidak disetujui
+                  </div>                  
+                  <table id="data-alumni" class="table table-bordered" style="font-family:'ubuntu'">
                       <thead>
                           <tr>
                               <th class="text-center" width="5%">No.</th>
-                              <th class="text-center" width="25%">Nama Mahasiswa</th>
-                              <th class="text-center" width="25%">Judul Skripsi </th>
-                              <th class="text-center" width="15%">Pembimbing</th>
-                              <th class="text-center" width="15%">Kelas</th>
+                              <th class="text-center" width="22%">Nama Mahasiswa</th>
+                              <th class="text-center" width="30%">Judul Skripsi </th>
+                              <th class="text-center" width="15%">Detail judul </th>
+                              <th class="text-center" width="20%">Pembimbing</th>
+                              <th class="text-center" width="7%">Kelas</th>
                           </tr>
                       </thead>
                       <tbody>
@@ -67,10 +74,13 @@
                               <td>
                                   <?php echo  $judul1 ?>
                               </td>
+                              <td class="text-center">
+                                  <button type="button" class="btn btn-primary btn-sm">Detail Judul 1 <i class="fa fa-external-link"></i></button>
+                              </td>                              
                               <td>
                                   <?php echo  $pembimbing1 ?>
                               </td>
-                              <td>
+                              <td class="text-center">
                                   <?php echo  $kelas ?>
                               </td>
                           </tr>
@@ -82,10 +92,13 @@
                               <td>
                                   <?php echo  $judul2 ?>
                               </td>
+                              <td class="text-center">
+                                  <button type="button" class="btn btn-info btn-sm">Detail Judul 2 <i class="fa fa-external-link"></i></button>
+                              </td>                               
                               <td>
                                   <?php echo  $pembimbing2 ?>
                               </td>
-                              <td>
+                              <td class="text-center">
                                   <?php echo  $kelas ?>
                               </td>
                           </tr>                          
