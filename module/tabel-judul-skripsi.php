@@ -39,28 +39,56 @@
                           include('./library/environment.php');
                           //include koneksi database   
                           include('./library/database.php');
+                          //get dosen
+                          $dosen = print_r($pembimbing);
+                          echo '<br>';
+                          $kelas = print_r($kelas);
+                          //query table
                           $query  = "SELECT *  FROM skripsi";
                           $no     = 1;
                           $result =  mysqli_query($connect, $query);
                           while ($row = mysqli_fetch_array($result)) {
                           
-                          $nama       = $row['mahasiswa'];
-                          $judul1     = $row['judul1'];
-                          $judul2     = $row['judul2'];
-                          //$pemimbing1 = $row['pemimbing1'];
-                          //$pemimbing2 = $row['pemimbing2'];
-                          $kelas      = $row['kelas'];
+                          $nim         = $row['nim'];
+                          $nama        = $row['mahasiswa'];
+                          $judul1      = $row['judul1'];
+                          $judul2      = $row['judul2'];
+                          $pembimbing1 = $row['pembimbing1'];
+                          $pembimbing2 = $row['pembimbing2'];
+                          $kelas       = $row['kelas'];
 
                           ?>
                 
                           <tr align='left'>
                               <td class="text-center"><?php echo  $no;?></td>
-                              <td><?php echo  $nama ?></td>
-                              <td><?php echo  $judul1 ?></td>
-                              <td><?php echo  $judul2; ?></td>
-                              <td><?php //echo  $pemimbing1 ?></td>
-                              <td><?php //echo  $pemimbing2 ?></td>
+                              <td>
+                                  <?php echo  $nama ?>
+                              </td>
+                              <td>
+                                  <?php echo  $judul1 ?>
+                              </td>
+                              <td>
+                                  <?php echo  $pembimbing1 ?>
+                              </td>
+                              <td>
+                                  <?php echo  $kelas ?>
+                              </td>
                           </tr>
+                          <tr align='left'>
+                              <td class="text-center"></td>
+                              <td>NIM :<br>
+                                  <?php echo  $nim ?>
+                              </td>
+                              <td>
+                                  <?php echo  $judul2 ?>
+                              </td>
+                              <td>
+                                  <?php echo  $pembimbing2 ?>
+                              </td>
+                              <td>
+                                  <?php echo  $kelas ?>
+                              </td>
+                          </tr>                          
                           <?php
                           $no++;
                           }
