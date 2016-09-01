@@ -47,7 +47,7 @@
               <h4 class="modal-title"><i class="fa fa-info-circle"></i> Informasi Account Login</h4>
             </div>
             <div class="modal-body">
-              <p>untuk masuk ke panel, silahkan menggunakan account dari siakad - Sistem Informasi Akademik.</p>
+              <p>untuk masuk ke panel system, silahkan menggunakan account dari siakad - Sistem Informasi Akademik.</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>

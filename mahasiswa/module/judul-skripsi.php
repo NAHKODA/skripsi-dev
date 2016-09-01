@@ -11,7 +11,7 @@
                             $var = $_SESSION['nim'];
                             //Data mentah yang ditampilkan ke tabel    
                             include ('../library/database.php');
-                            $query  = "SELECT * FROM skripsi WHERE nim = '1402040424'";
+                            $query  = "SELECT * FROM skripsi WHERE nim = '$var'";
                             $result =  mysqli_query($connect, $query);
                                 while ($row = mysqli_fetch_array($result)) {
 
@@ -37,11 +37,11 @@
                             <tbody>
                               <tr>
                                 <td>NIM</td>
-                                <td><?php echo $nim ?></td>
+                                <td><?php if(isset($nim)) { echo $nim; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
                               </tr>
                               <tr>
                                 <td>Nama Mahasiswa</td>
-                                <td><?php echo $nama ?></td>
+                                <td><?php if(isset($nama)) { echo $nama; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
                               </tr>                                                           
                             </tbody>
                           </table>     
@@ -59,15 +59,15 @@
                             <tbody>
                               <tr>
                                 <td>Judul Skripsi</td>
-                                <td><?php echo $judul1 ?></td>
+                                <td><?php if(isset($judul1)) { echo $judul1; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
                               </tr>
                               <tr>
                                 <td>Desciptions Judul</td>
-                                <td><?php echo $description1 ?></td>
+                                <td><?php if(isset($description1)) { echo $description1; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
                               </tr> 
                               <tr>
                                 <td>Dosen Pembimbing</td>
-                                <td><?php echo $pembimbing1 ?></td>
+                                <td><?php if(isset($pembimbing1)) { echo $pembimbing1; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
                               </tr>  
                               <tr>
                                 <td>Status Judul </td>
@@ -76,7 +76,7 @@
                             </tbody>
                           </table>  
                           </div> 
-                          <a href="media.php?action=edit-judul1&id=<?php echo $nim ?>" type="button" class="btn btn-success" style="border-color: #158873;color: #158873;"><i class="pe-7s-config"></i> Ubah Data</a> 
+                          <a href="media.php?action=edit-judul1&token-generate=9ZsuEqwCtcxz97qCZ9mFizCrAj083z0m" type="button" class="btn btn-success" style="border-color: #158873;color: #158873;"><i class="pe-7s-config"></i> Ubah Data</a> 
                           <br>
                           <br>
 
@@ -92,15 +92,15 @@
                             <tbody>
                               <tr>
                                 <td>Judul Skripsi</td>
-                                <td><?php echo $judul2 ?></td>
+                                <td><?php if(isset($judul2)) { echo $judul2; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
                               </tr>
                               <tr>
                                 <td>Desciptions Judul</td>
-                                <td><?php echo $description2 ?></td>
+                                <td><?php if(isset($description2)) { echo $description2; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
                               </tr>
                               <tr>
                                 <td>Dosen Pembimbing</td>
-                                <td><?php echo $pembimbing2 ?></td>
+                                <td><?php if(isset($pembimbing2)) { echo $pembimbing2; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
                               </tr> 
                               <tr>
                                 <td>Status Judul</td>
@@ -109,7 +109,7 @@
                             </tbody>
                           </table>     
                           </div>                           
-                          <a href="media.php?action=edit-judul2&id=<?php echo $nim ?>" type="button" class="btn btn-success" style="border-color: #158873;color: #158873;"><i class="pe-7s-config"></i> Ubah Data</a>
+                          <a href="media.php?action=edit-judul2&token-generate=kCTqv5SFxWBWvKsmiAAfAbh8y7pvSTcV" type="button" class="btn btn-success" style="border-color: #158873;color: #158873;"><i class="pe-7s-config"></i> Ubah Data</a>
                         </div> 
                       </div>
                     </div>

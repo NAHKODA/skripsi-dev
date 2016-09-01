@@ -1,6 +1,6 @@
 <?php
 	//get nim 
-	$nim = $_GET['id'];
+	$nim = $_SESSION['nim'];
 	//include config
 	include('../library/config.php');
 	//include environment
@@ -30,11 +30,15 @@
 				      <form action="" method="POST">
 				      		
 				      		<input type="hidden" name="nim" value="<?php echo $nim ?>">
-
-                            <div class="form-group">
-                                <label for="judul">Prodi</label>
-                                <input type="text" name = "prodi" class="form-control" placeholder="Pilih Prodi Anda." value="<?php echo $prodi ?>" required>
-                            </div>
+							<div class="form-group">
+							  <label for="sel1">Prodi</label>
+							  <select class="form-control">
+							    <option>1</option>
+							    <option>2</option>
+							    <option>3</option>
+							    <option>4</option>
+							  </select>
+							</div>
 
                             <div class="form-group">
                                 <label for="judul">Nama Mahasiswa</label>
@@ -50,10 +54,25 @@
                                 <textarea rows="5" name="desjudul1" class="form-control" placeholder="Here can be your description"><?php echo $desjudul ?></textarea>
                             </div>                            
                             
-                            <div class="form-group">
-                                <label for="judul">Kelas</label>
-                                <input type="text" name = "kelas" class="form-control" placeholder="Pilih Prodi Anda." value="<?php echo $kelas ?>" required>
-                            </div>
+							<div class="form-group">
+							  <label for="sel1">Kelas</label>
+							  <select class="form-control">
+							    <option>1</option>
+							    <option>2</option>
+							    <option>3</option>
+							    <option>4</option>
+							  </select>
+							</div>
+
+							<div class="form-group">
+							  <label for="sel1">Pembimbing</label>
+							  <select class="form-control">
+							    <option>1</option>
+							    <option>2</option>
+							    <option>3</option>
+							    <option>4</option>
+							  </select>
+							</div>							
 
                             <button type="submit" class="btn btn-info btn-fill pull-right">Update Data</button>
                             <a href="" class="btn btn-danger btn-fill pull-right" style="margin-right:5px">Batal</a>
