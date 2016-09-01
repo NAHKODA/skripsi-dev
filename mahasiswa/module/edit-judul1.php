@@ -8,10 +8,12 @@
 	//include database
 	include('../library/database.php');	 	
 	//query select where nim
-	$query = "SELECT nim, judul1, desjudul1, kelas, pembimbing1 FROM skripsi WHERE nim ='$nim'";
+	$query = "SELECT nim, mahasiswa, judul1, desjudul1, kelas, pembimbing1, prodi FROM skripsi WHERE nim ='$nim'";
 	$result =  mysqli_query($connect, $query);
     while ($row = mysqli_fetch_array($result)) {
     	$nim 			= $row['nim'];
+    	$nama 			= $row['mahasiswa'];
+    	$prodi 			= $row['prodi'];
     	$judul 			= $row['judul1'];
     	$desjudul		= $row['desjudul1'];
     	$kelas			= $row['kelas'];
@@ -30,6 +32,16 @@
 				      		<input type="hidden" name="nim" value="<?php echo $nim ?>">
 
                             <div class="form-group">
+                                <label for="judul">Prodi</label>
+                                <input type="text" name = "prodi" class="form-control" placeholder="Pilih Prodi Anda." value="<?php echo $prodi ?>" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="judul">Nama Mahasiswa</label>
+                                <input type="text" name = "nama" class="form-control" placeholder="Masukan Nama Anda." value="<?php echo $nama ?>" required>
+                            </div>                            
+
+                            <div class="form-group">
                                 <label for="judul">Judul Skripsi</label>
                                 <input type="text" name = "judul1" class="form-control" placeholder="Masukan Judul Skripsi Anda." value="<?php echo $judul ?>" required>
                             </div>
@@ -38,6 +50,11 @@
                                 <textarea rows="5" name="desjudul1" class="form-control" placeholder="Here can be your description"><?php echo $desjudul ?></textarea>
                             </div>                            
                             
+                            <div class="form-group">
+                                <label for="judul">Kelas</label>
+                                <input type="text" name = "kelas" class="form-control" placeholder="Pilih Prodi Anda." value="<?php echo $kelas ?>" required>
+                            </div>
+
                             <button type="submit" class="btn btn-info btn-fill pull-right">Update Data</button>
                             <a href="" class="btn btn-danger btn-fill pull-right" style="margin-right:5px">Batal</a>
 				      </form>
