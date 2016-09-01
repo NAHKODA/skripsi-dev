@@ -6,7 +6,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 
-$query 	  = mysqli_query($connect,"SELECT * FROM mahasiswa WHERE username = '$username' AND password = '$password'");
+$query 	  = mysqli_query($connect,"SELECT * FROM view_mahasiswa WHERE username = '$username' AND password = '$password'");
 $row  	  = mysqli_fetch_array($query);	
 
 if ($row['username'] == $username AND $row['password'] == $password){

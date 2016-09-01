@@ -3,35 +3,39 @@ session_start();
 if (empty($_SESSION['username'] && $_SESSION['password'])) {
   header('location:index.php');
 }
+
 /* create environment */
 include ('../library/environment.php');
 /* end environment */ 
 
 /*db*/
 include('./library/database.php');
-/**/
+/*/
 
+/* start get config */
+  include('../library/config.php');
+/* end get config */
 include ('part/header.php');
 
-if(!isset($_GET['ref'])){
+if(!isset($_GET['action'])){
 
         $title = '<i class="pe-7s-graph"></i> Dashboard';
         $dashboard = TRUE;
         include ('part/sidebar.php');
 
-    }elseif($_GET['ref'] == "dashboard"){
+    }elseif($_GET['action'] == "dashboard"){
         $title = '<i class="pe-7s-graph"></i> Dashboard';
         $dashboard = TRUE;
         include ('part/sidebar.php');
 
-    }elseif($_GET['ref'] == "profile"){
-        $title = '<i class="pe-7s-user"></i> User Profile';
+    }elseif($_GET['action'] == "profile-mahasiswa"){
+        $title = '<i class="pe-7s-user"></i> Profile Mahasiswa';
         $profile = TRUE;
         include ('part/sidebar.php');
 
-    }elseif($_GET['ref'] == "data-trace"){
-        $title = '<i class="pe-7s-server"></i> Data Trace';
-        $data_trace = TRUE;
+    }elseif($_GET['action'] == "judul-skripsi"){
+        $title = '<i class="pe-7s-note2"></i> Judul Skripsi';
+        $judul_skripsi = TRUE;
         include ('part/sidebar.php');
 
     }else{
@@ -43,20 +47,17 @@ include ('part/navbar.php');
 
 
 /* main content*/
- if(!isset($_GET['ref'])){
+ if(!isset($_GET['action'])){
         require "module/dashboard.php";
     }else{
-        if($_GET['ref'] == "dashboard"){
+        if($_GET['action'] == "dashboard"){
             require "module/dashboard.php";
 
-        }elseif($_GET['ref'] == "profile") {
+        }elseif($_GET['action'] == "profile-mahasiswa") {
             require "module/profile.php";
 
-        }elseif($_GET['ref'] == "data-trace") {
-            require "module/data.php";
-
-        }elseif($_GET['ref'] == "hapus-data"){
-            require "module/hapus-data.php";
+        }elseif($_GET['action'] == "judul-skripsi") {
+            require "module/judul-skripsi.php";
 
         }else{
             require "module/404.php";
