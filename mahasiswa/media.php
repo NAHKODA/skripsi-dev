@@ -38,6 +38,16 @@ if(!isset($_GET['action'])){
         $judul_skripsi = TRUE;
         include ('part/sidebar.php');
 
+    }elseif($_GET['action'] == "edit-judul1"){
+        $title = '<i class="pe-7s-note2"></i> Edit Judul 1';
+        $judul_skripsi = TRUE;
+        include ('part/sidebar.php');
+
+    }elseif($_GET['action'] == "edit-judul2"){
+        $title = '<i class="pe-7s-note2"></i> Edit Judul 2';
+        $judul_skripsi = TRUE;
+        include ('part/sidebar.php');
+
     }else{
         echo 'sidebar not found';
     }
@@ -58,6 +68,12 @@ include ('part/navbar.php');
 
         }elseif($_GET['action'] == "judul-skripsi") {
             require "module/judul-skripsi.php";
+
+        }elseif($_GET['action'] == "edit-judul1") {
+            require "module/edit-judul1.php";
+
+        }elseif($_GET['action'] == "edit-judul2") {
+            require "module/edit-judul2.php";
 
         }else{
             require "module/404.php";
