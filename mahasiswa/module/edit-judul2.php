@@ -75,7 +75,7 @@
 							</div>							
 
                             <button type="submit" class="btn btn-info btn-fill pull-right">Update Data</button>
-                            <a href="" class="btn btn-danger btn-fill pull-right" style="margin-right:5px">Batal</a>
+                            <a href="media.php?action=judul-skripsi" class="btn btn-danger btn-fill pull-right" style="margin-right:5px">Batal</a>
 				      </form>
 				      </div>
 				     </div>
