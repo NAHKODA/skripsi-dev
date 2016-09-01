@@ -76,7 +76,7 @@
                             </tbody>
                           </table>  
                           </div> 
-                          <a href="media.php?action=edit-judul1&token-generate=9ZsuEqwCtcxz97qCZ9mFizCrAj083z0m" type="button" class="btn btn-success" style="border-color: #158873;color: #158873;"><i class="pe-7s-config"></i> Ubah Data</a> 
+                          <a href="media.php?action=edit-judul1&token-generate=<?php echo base64_encode($_SESSION['nim']) ?>" type="button" class="btn btn-success" style="border-color: #158873;color: #158873;"><i class="pe-7s-config"></i> Ubah Data</a> 
                           <br>
                           <br>
 
@@ -109,7 +109,7 @@
                             </tbody>
                           </table>     
                           </div>                           
-                          <a href="media.php?action=edit-judul2&token-generate=kCTqv5SFxWBWvKsmiAAfAbh8y7pvSTcV" type="button" class="btn btn-success" style="border-color: #158873;color: #158873;"><i class="pe-7s-config"></i> Ubah Data</a>
+                          <a href="media.php?action=edit-judul2&token-generate=<?php echo base64_encode($_SESSION['nim']) ?>" type="button" class="btn btn-success" style="border-color: #158873;color: #158873;"><i class="pe-7s-config"></i> Ubah Data</a>
                         </div> 
                       </div>
                     </div>
