@@ -3,7 +3,7 @@
         <div class="sidebar-wrapper">
             <div class="logo">
                 <a href="media.php?action=dashboard" class="simple-text">
-                    <i class="pe-7s-home"></i> Administrator
+                    <i class="pe-7s-home"></i> Mahasiswa
                 </a>
             </div>
 

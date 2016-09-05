@@ -28,16 +28,18 @@
 				      <div class="unwaha-padding panel-heading" style="color:#fff;background-color: #158873;border-color: #158873;"> <i class="pe-7s-note2"></i> Ubah Pengajuan Judul Skripsi 2</div>
 				      <div class="panel-body">
 				      <form action="" method="POST">
-				      		
 				      		<input type="hidden" name="nim" value="<?php echo $nim ?>">
-							<div class="form-group">
-							  <label for="sel1">Prodi</label>
-							  <select class="form-control">
-							    <option>1</option>
-							    <option>2</option>
-							    <option>3</option>
-							    <option>4</option>
-							  </select>
+							<div class="form-group">				      		
+							  <label for="sel1">Program Studi:</label>
+								<select class="form-control" name='prodi2' style="width:50%" required=""><?php $i=0;
+								foreach($kaprodi as $program_studi){
+									if($i==1){
+										echo "<option value='$i' selected='selected'>$program_studi</option>";}
+									else{
+										echo "<option value='$i'>$program_studi</option>";}
+									$i++;
+									}?>
+								</select>
 							</div>
 
                             <div class="form-group">
@@ -55,24 +57,34 @@
                             </div>                            
                             
 							<div class="form-group">
-							  <label for="sel1">Kelas</label>
-							  <select class="form-control">
-							    <option>1</option>
-							    <option>2</option>
-							    <option>3</option>
-							    <option>4</option>
-							  </select>
+							  <label for="sel1">Kelas:</label>
+								<select class="form-control" name='kelas2' style="width:50%">
+								<?php $i=0;
+								foreach($kKelas as $kelasku){
+									if($i==1){
+										echo "<option value='$i' selected='selected'>$kelasku</option>";}
+									else{
+										echo "<option value='$i'>$kelasku</option>";
+									}
+									$i++;
+								}
+								?>
+								</select>
 							</div>
 
 							<div class="form-group">
-							  <label for="sel1">Pembimbing</label>
-							  <select class="form-control">
-							    <option>1</option>
-							    <option>2</option>
-							    <option>3</option>
-							    <option>4</option>
-							  </select>
-							</div>							
+							  <label for="sel1">Pilihan Pembimbing:</label>
+								<select class="form-control" name='pembimbing2' style="width:50%">
+								<?php $i=0;
+									foreach($kPembimbing as $pemb){
+										if($pembimbing == $i++)
+											echo "<option value='$i' selected>$pemb</option>";
+										else
+											echo "<option value='$i'>$pemb</option>";
+									}
+								?>
+								</select>
+							</div>
 
                             <button type="submit" class="btn btn-info btn-fill pull-right">Update Data</button>
                             <a href="media.php?action=judul-skripsi" class="btn btn-danger btn-fill pull-right" style="margin-right:5px">Batal</a>

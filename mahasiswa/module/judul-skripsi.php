@@ -5,6 +5,8 @@
 				      <div class="unwaha-padding panel-heading" style="color:#fff;background-color: #158873;border-color: #158873;"> <i class="pe-7s-note2"></i> Detail Pengajuan Judul Skripsi</div>
 				      <div class="panel-body">                
                         <?php
+                            //include config
+                            include_once('../library/config.php');                        
                             //include environmrnt
                             include('../library/environment.php');
                             //var data nim
@@ -24,7 +26,7 @@
                                   $pembimbing1 = $row['pembimbing1'];
                                   $pembimbing2 = $row['pembimbing2'];
                                   $kelas       = $row['kelas'];
-                                }
+                                }                                                                                               
                             ?>
                         <div class="table-responsive">
                           <table class="table table-bordered table-striped">
