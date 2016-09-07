@@ -48,6 +48,11 @@ if(!isset($_GET['action'])){
         $judul_skripsi = TRUE;
         include ('part/sidebar.php');
 
+    }elseif($_GET['action'] == "ajukan-judul"){
+        $title = '<i class="pe-7s-note2"></i> Ajukan Judul';
+        $judul_skripsi = TRUE;
+        include ('part/sidebar.php');
+
     }else{
         echo 'sidebar not found';
     }
@@ -74,6 +79,9 @@ include ('part/navbar.php');
 
         }elseif($_GET['action'] == "edit-judul2") {
             require "module/edit-judul2.php";
+
+        }elseif($_GET['action'] == "ajukan-judul") {
+            require "module/ajukan-judul.php";
 
         }else{
             require "module/404.php";

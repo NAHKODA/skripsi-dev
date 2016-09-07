@@ -33,7 +33,7 @@
 							  <label for="sel1">Program Studi:</label>
 								<select class="form-control" name='prodi2' style="width:50%" required=""><?php $i=0;
 								foreach($kaprodi as $program_studi){
-									if($i==1){
+									if($i==$prodi){
 										echo "<option value='$i' selected='selected'>$program_studi</option>";}
 									else{
 										echo "<option value='$i'>$program_studi</option>";}
@@ -61,7 +61,7 @@
 								<select class="form-control" name='kelas2' style="width:50%">
 								<?php $i=0;
 								foreach($kKelas as $kelasku){
-									if($i==1){
+									if($i==$kelas){
 										echo "<option value='$i' selected='selected'>$kelasku</option>";}
 									else{
 										echo "<option value='$i'>$kelasku</option>";

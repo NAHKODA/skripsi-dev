@@ -35,14 +35,34 @@
                                   $pembimbing1 = $row['pembimbing1'];
                                   $pembimbing2 = $row['pembimbing2'];
                                   $kelas       = $row['kelas'];
-                                }                             
+                                }  
+                                /*
+                                $i=0;
+                                foreach($kPembimbing as $pemb1){
+                                  if($pembimbing1 == $i++)
+                                  
+                                    $pemb1;
+                                  else
+                                    $pemb1;
+                                  
+                                }
+                                $k=0;
+                                foreach($kPembimbing as $pemb2){
+                                  if($pembimbing2 == $k++)
+                                  
+                                    $pemb2;
+                                  else
+                                    $pemb2;
+                                  
+                                } 
+                                */                                          
                     ?>
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
             <div class="col-md-6">
             <div class="panel panel-success" style="box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);">
-                <div class="unwaha-padding panel-heading" style="color:#fff;background-color: #158873;border-color: #158873;"> <i class="pe-7s-notebook"></i> Panduan
+                <div class="unwaha-padding panel-heading" style="color:#fff;background-color: #158873;border-color: #158873;"> <i class="pe-7s-notebook"></i> Panduan Pengisian Pengajuan Judul Skripsi
                 </div>
                   <div class="panel-body">                
                     <ul class="list-unstyled">
@@ -102,6 +122,32 @@
 
 
             <div class="row"> 
+            <?php 
+              //include 
+              include_once('../library/environment.php');
+              //include koneksi
+              include_once('../library/database.php');
+              //var data
+              $nim = $_SESSION['nim'];
+              //query checking
+              $query = "SELECT nim FROM skripsi WHERE nim = '$nim'";
+              $result =  mysqli_query($connect, $query);
+              while($row = mysqli_fetch_array($result)){
+                $register = $row['nim'];
+              }
+
+            ?>
+            <?php if(isset($register) =='') { ?>
+            <div class="col-md-12">
+            <div class="panel panel-success" style="box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);">
+              <div class="unwaha-padding panel-heading" style="color:#fff;background-color: #158873;border-color: #158873;"> <i class="pe-7s-note2"></i> Detail Pengajuan Judul</div>
+                <div class="panel-body">
+                    <a href="media.php?action=ajukan-judul" class="btn btn-success">Ajukan Judul Baru</a>
+                </div>
+              </div>
+              </div>
+            <?php }else{ ?>
+            <div class="col-md-12">
             <div class="panel panel-success" style="box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);">
               <div class="unwaha-padding panel-heading" style="color:#fff;background-color: #158873;border-color: #158873;"> <i class="pe-7s-note2"></i> Detail Pengajuan Judul</div>
               <div class="panel-body">                
@@ -130,7 +176,7 @@
                               </tr>
                               <tr>
                                 <td>Dosen Pembimbing</td>
-                                <td><?php if(isset($pembimbing1)) { echo $pembimbing1; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
+                                <td><?php if(isset($pemb1)) { echo $pemb1; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
                               </tr> 
                               <tr>
                                 <td>Status Judul</td>
@@ -164,7 +210,7 @@
                                   </tr> 
                                   <tr>
                                     <td>Dosen Pembimbing</td>
-                                    <td><?php if(isset($pembimbing2)) { echo $pembimbing2; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
+                                    <td><?php if(isset($pemb2)) { echo $pemb2; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
                                   </tr>  
                                   <tr>
                                     <td>Status Judul </td>
@@ -175,7 +221,10 @@
                               </div>             
                           </div>       
                       </div>
-                    </div>                    
+                    </div>    
+                    </div>
+                    <?php } ?>                
                 </div>
+
             </div>
         </div>
