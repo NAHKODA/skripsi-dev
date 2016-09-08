@@ -44,16 +44,16 @@
 
                             <div class="form-group">
                                 <label for="judul">Nama Mahasiswa</label>
-                                <input type="text" name = "nama" class="form-control" placeholder="Masukan Nama Anda." value="<?php echo $nama ?>" required>
+                                <input type="text" name = "nama" class="form-control" placeholder="Masukan Nama Anda." value="<?php if(isset($nama)) { echo $nama; } ?>" required>
                             </div>                            
 
                             <div class="form-group">
                                 <label for="judul">Judul Skripsi</label>
-                                <input type="text" name = "judul1" class="form-control" placeholder="Masukan Judul Skripsi Anda." value="<?php echo $judul ?>" required>
+                                <input type="text" name = "judul2" class="form-control" placeholder="Masukan Judul Skripsi Anda." value="<?php if(isset($judul)) { echo $judul; } ?>"" required>
                             </div>
                             <div class="form-group">
                                 <label for="judul">Descriptions Judul</label>
-                                <textarea rows="5" name="desjudul1" class="form-control" placeholder="Here can be your description"><?php echo $desjudul ?></textarea>
+                                <textarea rows="5" name="desjudul1" class="form-control" placeholder="Here can be your description"><?php if(isset($desjudul)) { echo $desjudul; } ?></textarea>
                             </div>                            
                             
 							<div class="form-group">

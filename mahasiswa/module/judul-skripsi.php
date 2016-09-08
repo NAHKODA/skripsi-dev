@@ -1,33 +1,51 @@
+<?php
+  //include config
+  include_once('../library/config.php');                        
+  //include environmrnt
+  include('../library/environment.php');
+  //var data nim
+  $var = $_SESSION['nim'];
+  //Data mentah yang ditampilkan ke tabel    
+  include ('../library/database.php');
+  $query  = "SELECT * FROM skripsi WHERE nim = '$var'";
+  $result =  mysqli_query($connect, $query);
+    while ($row = mysqli_fetch_array($result)) {
+
+      $nim         = $row['nim'];
+      $nama        = $row['mahasiswa'];
+      $judul1      = $row['judul1'];
+      $description1= $row['desjudul1'];
+      $judul2      = $row['judul2'];
+      $description2= $row['desjudul2'];
+      $pembimbing1 = $row['pembimbing1'];
+      $pembimbing2 = $row['pembimbing2'];
+      $kelas       = $row['kelas'];
+    }                                                                                     
+    //var data
+    $nim = $_SESSION['nim'];
+    //query checking
+    $query = "SELECT nim FROM skripsi WHERE nim = '$nim'";
+    $result =  mysqli_query($connect, $query);
+      while($row = mysqli_fetch_array($result)){
+        $register = $row['nim'];
+      }
+?>
         <div class="content">
             <div class="container-fluid">
-                <div class="row">
+            <div class="row">
+            <?php if(isset($register) =='') { ?>
+            <div class="col-md-12">
+            <div class="panel panel-success" style="box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);">
+              <div class="unwaha-padding panel-heading" style="color:#fff;background-color: #158873;border-color: #158873;"> <i class="pe-7s-note2"></i> Detail Pengajuan Judul</div>
+                <div class="panel-body">
+                    <a href="media.php?action=ajukan-judul" class="btn btn-success">Ajukan Judul Baru</a>
+                </div>
+              </div>
+              </div>
+            <?php }else{ ?>
 				    <div class="panel panel-success" style="box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);">
 				      <div class="unwaha-padding panel-heading" style="color:#fff;background-color: #158873;border-color: #158873;"> <i class="pe-7s-note2"></i> Detail Pengajuan Judul Skripsi</div>
 				      <div class="panel-body">                
-                        <?php
-                            //include config
-                            include_once('../library/config.php');                        
-                            //include environmrnt
-                            include('../library/environment.php');
-                            //var data nim
-                            $var = $_SESSION['nim'];
-                            //Data mentah yang ditampilkan ke tabel    
-                            include ('../library/database.php');
-                            $query  = "SELECT * FROM skripsi WHERE nim = '$var'";
-                            $result =  mysqli_query($connect, $query);
-                                while ($row = mysqli_fetch_array($result)) {
-
-                                  $nim         = $row['nim'];
-                                  $nama        = $row['mahasiswa'];
-                                  $judul1      = $row['judul1'];
-                                  $description1= $row['desjudul1'];
-                                  $judul2      = $row['judul2'];
-                                  $description2= $row['desjudul2'];
-                                  $pembimbing1 = $row['pembimbing1'];
-                                  $pembimbing2 = $row['pembimbing2'];
-                                  $kelas       = $row['kelas'];
-                                }                                                                                               
-                            ?>
                         <div class="table-responsive">
                           <table class="table table-bordered table-striped">
                             <thead>
@@ -114,6 +132,7 @@
                           <a href="media.php?action=edit-judul2&token=<?php echo base64_encode($_SESSION['nim']) ?>" type="button" class="btn btn-success" style="border-color: #158873;color: #158873;"><i class="pe-7s-config"></i> Ubah Data</a>
                         </div> 
                       </div>
+                      <?php } ?> 
                     </div>
                 </div>
             </div>

@@ -17,6 +17,7 @@ if ($row['username'] == $username AND $row['password'] == $password){
 	$_SESSION['username'] 	= $row['username'];
 	$_SESSION['password'] 	= $row['password'];
 	$_SESSION['nama_mhs'] 	= $row['nama_mhs'];
+	$_SESSION['prodi']		= $row['kode_jurusan'];
 	$_SESSION['email'] 		= $row['email'];
 
 	header('location:media.php?action=dashboard');

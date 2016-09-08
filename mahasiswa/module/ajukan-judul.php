@@ -1,6 +1,20 @@
 		<?php
 			//include config
 			include_once('../library/config.php');
+
+			if($_SESSION['prodi'] == '0205')
+			{
+				$prodi = '1';
+									
+			}elseif($_SESSION['prodi'] == '0204'){
+										
+				$prodi = '2';
+									
+			}else{
+
+				$prodi = '0';
+
+			}
 		?>
         <div class="content">
             <div class="container-fluid">
@@ -11,19 +25,7 @@
 				      <form action="module/simpan-judul-baru.php" method="POST">
 				      		<input type="hidden" name="nim" value="<?php echo $_SESSION['nim'] ?>">
 				      		<input type="hidden" name="mahasiswa" value="<?php echo $_SESSION['nama_mhs'] ?>">
-							<div class="form-group">				      		
-							  <label for="sel1">Program Studi:</label>
-								<select class="form-control" name='prodi' style="width:50%" required=""><?php $i=0;
-								foreach($kaprodi as $program_studi){
-									if($i==0){
-										echo "<option value='$i' selected='selected'>$program_studi</option>";}
-									else{
-										echo "<option value='$i'>$program_studi</option>";}
-									$i++;
-									}?>
-								</select>
-							</div>                         
-
+				      		<input type="hidden" name="prodi" value="<?php echo $prodi ?>">
                             <div class="form-group">
                                 <label for="judul">Judul Skripsi 1</label>
                                 <input type="text" name = "judul1" class="form-control" placeholder="Masukan Judul Skripsi Anda." required>
@@ -47,9 +49,9 @@
 								<?php $i=0;
 								foreach($kKelas as $kelasku){
 									if($i==3){
-										echo "<option value='$i' selected='selected'>$kelasku</option>";}
+										echo "<option style='width:100%;' value='$i' selected='selected'>$kelasku</option>";}
 									else{
-										echo "<option value='$i'>$kelasku</option>";
+										echo "<option style='width:100%;' value='$i'>$kelasku</option>";
 									}
 									$i++;
 								}
@@ -79,12 +81,6 @@
 									}
 								?>
 							</select>
-							</div>
-
-							<div class="form-group">
-								<div class="checkbox">
-								  <label><input type="checkbox" name="pembimbing" value="1">Sudah Melalui Pembagian Dosen Pembimbing</label>
-								</div>
 							</div>
 
                             <button type="submit" class="btn btn-info btn-fill pull-right">Simpan Data</button>

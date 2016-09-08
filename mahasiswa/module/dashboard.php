@@ -36,26 +36,7 @@
                                   $pembimbing2 = $row['pembimbing2'];
                                   $kelas       = $row['kelas'];
                                 }  
-                                /*
-                                $i=0;
-                                foreach($kPembimbing as $pemb1){
-                                  if($pembimbing1 == $i++)
-                                  
-                                    $pemb1;
-                                  else
-                                    $pemb1;
-                                  
-                                }
-                                $k=0;
-                                foreach($kPembimbing as $pemb2){
-                                  if($pembimbing2 == $k++)
-                                  
-                                    $pemb2;
-                                  else
-                                    $pemb2;
-                                  
-                                } 
-                                */                                          
+                                                                          
                     ?>
         <div class="content">
             <div class="container-fluid">
@@ -176,7 +157,12 @@
                               </tr>
                               <tr>
                                 <td>Dosen Pembimbing</td>
-                                <td><?php if(isset($pemb1)) { echo $pemb1; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
+                                <td><?php $i=0;
+                                      foreach($kPembimbing as $pemb1){
+                                        if($pembimbing1 == $i++)
+                                          echo $pemb1;
+                                      }
+                                    ?></td>
                               </tr> 
                               <tr>
                                 <td>Status Judul</td>
@@ -209,8 +195,14 @@
                                     <td><?php if(isset($description2)) { echo $description2; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
                                   </tr> 
                                   <tr>
-                                    <td>Dosen Pembimbing</td>
-                                    <td><?php if(isset($pemb2)) { echo $pemb2; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
+                                    <td>Dosen Pembimbing</td>                                   
+                                    <td><?php $i=0;
+                                      foreach($kPembimbing as $pemb2){
+                                        if($pembimbing2 == $i++)
+                                          echo $pemb2;
+                                        }
+                                        ?>
+                                    </td>
                                   </tr>  
                                   <tr>
                                     <td>Status Judul </td>
@@ -223,7 +215,7 @@
                       </div>
                     </div>    
                     </div>
-                    <?php } ?>                
+                    <?php } ?>                                    
                 </div>
 
             </div>
