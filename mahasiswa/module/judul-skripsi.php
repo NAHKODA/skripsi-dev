@@ -20,7 +20,48 @@
       $pembimbing1 = $row['pembimbing1'];
       $pembimbing2 = $row['pembimbing2'];
       $kelas       = $row['kelas'];
-    }                                                                                     
+      $status1     = $row['status_judul1'];
+      $status2     = $row['status_judul2'];      
+    } 
+                            //status judul 1    
+                            if($status1 == '0')
+                            {
+                              $button1 = '<div class="alert alert-info text-center" style="background-color: #0b6e84;margin-top:20px">
+                                            Belum Dikoreksi
+                                          </div>';
+
+                            }elseif($status1 == '1'){
+                              $button1 = '<div class="alert alert-info text-center" style="background-color: #0b841a;margin-top:20px">
+                                            Judul Diterima
+                                          </div>';
+                            }elseif($status1 == '2'){
+                              $button1 = '<div class="alert alert-info text-center" style="background-color: #840b0b;margin-top:20px">
+                                            Judul Ditolak
+                                          </div>';
+                            }else{
+                              $button1 = '<div class="alert alert-info text-center" style="background-color: #bb6f11;margin-top:20px">
+                                            Status Tidak Diketahui
+                                          </div>';
+                            }
+                            //status judul 2 
+                            if($status2 == '0')
+                            {
+                              $button2 = '<div class="alert alert-info text-center" style="background-color: #0b6e84;margin-top:20px">
+                                            Belum Dikoreksi
+                                          </div>';
+                            }elseif($status2 == '1'){
+                              $button2 = '<div class="alert alert-info text-center" style="background-color: #0b841a;margin-top:20px">
+                                            Judul Diterima
+                                          </div>';
+                            }elseif($status2 == '2'){
+                              $button2 = '<div class="alert alert-info text-center" style="background-color: #840b0b;margin-top:20px">
+                                            Judul Ditolak
+                                          </div>';
+                            }else{
+                              $button2 = '<div class="alert alert-info text-center" style="background-color: #bb6f11;margin-top:20px">
+                                            Status Tidak Diketahui
+                                          </div>';
+                            }                                                                                                                        
     //var data
     $nim = $_SESSION['nim'];
     //query checking
@@ -97,7 +138,7 @@
                               </tr>  
                               <tr>
                                 <td>Status Judul </td>
-                                <td><?php //echo $pembimbing2 ?></td>
+                                <td><?php if(isset($button1)) { echo $button1; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
                               </tr>                                                                                       
                             </tbody>
                           </table>  
@@ -136,7 +177,7 @@
                               </tr> 
                               <tr>
                                 <td>Status Judul</td>
-                                <td><?php //echo $pembimbing2 ?></td>
+                                <td><?php if(isset($button2)) { echo $button2; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
                               </tr>             
                             </tbody>
                           </table>     

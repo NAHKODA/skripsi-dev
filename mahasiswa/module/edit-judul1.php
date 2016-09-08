@@ -32,12 +32,7 @@
 				      		<input type="hidden" name="nim" value="<?php echo $nim ?>">
 				      		<input type="hidden" name="mahasiswa" value="<?php echo $_SESSION['nama_mhs'] ?>">
 				      		<input type="hidden" name="prodi" value="<?php echo $prodi ?>">
-				      		<input type="hidden" name="type" value="edit-judul1">
-
-                            <div class="form-group">
-                                <label for="judul">Nama Mahasiswa</label>
-                                <input type="text" name = "nama" class="form-control" placeholder="Masukan Nama Anda." value="<?php if(isset($nama)) { echo $nama; } ?>" required>
-                            </div>                            
+				      		<input type="hidden" name="type" value="edit-judul1">                          
 
                             <div class="form-group">
                                 <label for="judul">Judul Skripsi</label>
