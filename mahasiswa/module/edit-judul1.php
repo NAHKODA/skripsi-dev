@@ -27,21 +27,12 @@
 				    <div class="panel panel-success" style="box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);">
 				      <div class="unwaha-padding panel-heading" style="color:#fff;background-color: #158873;border-color: #158873;"> <i class="pe-7s-note2"></i> Ubah Pengajuan Judul Skripsi 1</div>
 				      <div class="panel-body">
-				      <form action="" method="POST">
+				      <form action="module/update-judul.php" method="POST">
 				      		
 				      		<input type="hidden" name="nim" value="<?php echo $nim ?>">
-							<div class="form-group">
-							  <label for="sel1">Program Studi:</label>
-								<select class="form-control" name='prodi' style="width:50%" required=""><?php $i=0;
-								foreach($kaprodi as $program_studi){
-									if($i==$prodi){
-										echo "<option value='$i' selected='selected'>$program_studi</option>";}
-									else{
-										echo "<option value='$i'>$program_studi</option>";}
-									$i++;
-									}?>
-								</select>
-							</div>
+				      		<input type="hidden" name="mahasiswa" value="<?php echo $_SESSION['nama_mhs'] ?>">
+				      		<input type="hidden" name="prodi" value="<?php echo $prodi ?>">
+				      		<input type="hidden" name="type" value="edit-judul1">
 
                             <div class="form-group">
                                 <label for="judul">Nama Mahasiswa</label>

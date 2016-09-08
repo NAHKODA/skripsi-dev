@@ -87,7 +87,13 @@
                               </tr> 
                               <tr>
                                 <td>Dosen Pembimbing</td>
-                                <td><?php if(isset($pembimbing1)) { echo $pembimbing1; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
+                                <td><?php $i=0;
+                                      foreach($kPembimbing as $pemb1){
+                                        if($pembimbing1 == $i++)
+                                          echo $pemb1;
+                                        }
+                                        ?>
+                                </td>
                               </tr>  
                               <tr>
                                 <td>Status Judul </td>
@@ -120,7 +126,13 @@
                               </tr>
                               <tr>
                                 <td>Dosen Pembimbing</td>
-                                <td><?php if(isset($pembimbing2)) { echo $pembimbing2; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
+                                <td><?php $i=0;
+                                      foreach($kPembimbing as $pemb2){
+                                        if($pembimbing2 == $i++)
+                                          echo $pemb2;
+                                        }
+                                        ?>
+                                </td>
                               </tr> 
                               <tr>
                                 <td>Status Judul</td>

@@ -8,20 +8,7 @@
 	include('../../library/database.php');
 
 	if($_SESSION['nim'] == true){
-		/*
-		ECHO "INSERT INTO skripsi (nim,mahasiswa,judul1,desjudul1,judul2,desjudul2,prodi,kelas,pembimbing1,pembimbing2,pembimbing)
-				VALUES ($_POST[nim],
-					$_POST[mahasiswa],
-					$_POST[judul1],
-					$_POST[desjudul1],
-					$_POST[judul2],
-					$_POST[desjudul2],
-					$_POST[prodi],
-					$_POST[kelas],
-					$_POST[pembimbing1],
-					$_POST[pembimbing2],
-					$_POST[pembimbing])";
-					*/
+
 		$s = $connect->prepare("INSERT INTO skripsi (nim,mahasiswa,judul1,desjudul1,judul2,desjudul2,prodi,kelas,pembimbing1,pembimbing2)
 		VALUES (?,?,?,?,?,?,?,?,?,?)");
 
