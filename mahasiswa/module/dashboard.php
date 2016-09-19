@@ -37,7 +37,8 @@
                                   $pembimbing1 = $row['pembimbing1'];
                                   $pembimbing2 = $row['pembimbing2'];
                                   $kelas       = $row['kelas'];
-                                }  
+                                } 
+                            error_reporting('0');     
                             //status judul 1    
                             if($status1 == '0')
                             {
@@ -123,14 +124,6 @@
                                   <td><?php echo $nama_mhs ?></td>
                                 </tr>
                                 <tr>
-                                  <td>Kode Tahun</td>
-                                  <td><?php echo $kode_tahun ?></td>
-                                </tr>
-                                <tr>
-                                  <td>Kode Jurusan</td>
-                                  <td><?php echo $kode_jurusan ?></td>
-                                </tr>
-                                <tr>
                                   <td>Semester</td>
                                   <td><?php echo $semester ?></td>
                                 </tr>                                                            
@@ -164,7 +157,7 @@
             <div class="panel panel-success" style="box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);">
               <div class="unwaha-padding panel-heading" style="color:#fff;background-color: #158873;border-color: #158873;"> <i class="pe-7s-note2"></i> Detail Pengajuan Judul</div>
                 <div class="panel-body">
-                    <a href="media.php?action=ajukan-judul" class="btn btn-success">Ajukan Judul Baru</a>
+                    <a href="media.php?action=ajukan-judul&token=<?php echo SHA1(MD5(SHA1(MD5($_SESSION['nim'])))) ?>?source=dashboard" class="btn btn-success"><i class="pe-7s-note2"></i> Ajukan Judul Baru</a>
                 </div>
               </div>
               </div>
@@ -189,6 +182,10 @@
                             </thead>
                             <tbody>
                               <tr>
+                                <td>Status Judul</td>
+                                <td><?php if(isset($button1)) { echo $button1; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
+                              </tr>                            
+                              <tr>
                                 <td>Judul Skripsi</td>
                                 <td><?php if(isset($judul1)) { echo $judul1; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
                               </tr>
@@ -199,16 +196,12 @@
                               <tr>
                                 <td>Dosen Pembimbing</td>
                                 <td><?php $i=0;
-                                      foreach($kPembimbing as $pemb1){
+                                      foreach($kPembimbing1 as $pemb1){
                                         if($pembimbing1 == $i++)
                                           echo $pemb1;
                                       }
                                     ?></td>
-                              </tr> 
-                              <tr>
-                                <td>Status Judul</td>
-                                <td><?php if(isset($button1)) { echo $button1; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
-                              </tr>             
+                              </tr>              
                             </tbody>
                           </table>     
                           </div>              
@@ -228,6 +221,10 @@
                                 </thead>
                                 <tbody>
                                   <tr>
+                                    <td>Status Judul </td>
+                                    <td><?php if(isset($button2)) { echo $button2; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
+                                  </tr>                                
+                                  <tr>
                                     <td>Judul Skripsi</td>
                                     <td><?php if(isset($judul2)) { echo $judul2; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
                                   </tr>
@@ -238,17 +235,13 @@
                                   <tr>
                                     <td>Dosen Pembimbing</td>                                   
                                     <td><?php $i=0;
-                                      foreach($kPembimbing as $pemb2){
+                                      foreach($kPembimbing2 as $pemb2){
                                         if($pembimbing2 == $i++)
                                           echo $pemb2;
                                         }
                                         ?>
                                     </td>
-                                  </tr>  
-                                  <tr>
-                                    <td>Status Judul </td>
-                                    <td><?php if(isset($button2)) { echo $button2; } else { echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>'; } ?></td>
-                                  </tr>                                                                                       
+                                  </tr>                                                                                
                                 </tbody>
                               </table>  
                               </div>          

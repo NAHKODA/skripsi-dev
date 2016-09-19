@@ -9,17 +9,21 @@
 
 	if($_SESSION['nim'] == true){
 
-		$s = $connect->prepare("INSERT INTO skripsi (nim,mahasiswa,judul1,desjudul1,judul2,desjudul2,prodi,kelas,pembimbing1,pembimbing2)
-		VALUES (?,?,?,?,?,?,?,?,?,?)");
+		$status_judul1 = 0;
+		$status_judul2 = 0;
+		$s = $connect->prepare("INSERT INTO skripsi (nim,mahasiswa,judul1,desjudul1,status_judul1,judul2,desjudul2,status_judul2,prodi,kelas,pembimbing1,pembimbing2)
+		VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
 
-		$s->bind_param("isssssiiii",
+		$s->bind_param("isssissiiiii",
 
 			$_POST['nim'],
 			$_POST['mahasiswa'],
 			$_POST['judul1'],
 			$_POST['desjudul1'],
+			$status_judul1,
 			$_POST['judul2'],
 			$_POST['desjudul2'],
+			$status_judul2,
 			$_POST['prodi'],
 			$_POST['kelas'],
 			$_POST['pembimbing1'],
@@ -27,9 +31,9 @@
 
 		if(!$s->execute())
 		{
-			header('Location:./media.php?action=dashboard');
+			header('Location:../media.php?action=dashboard');
 		}else{
-			header('Location:./media.php?action=ajukan-judul');
+			header('Location:../media.php?action=ajukan-judul');
 		}
 		
 	}else{

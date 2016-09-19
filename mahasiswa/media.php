@@ -53,6 +53,11 @@ if(!isset($_GET['action'])){
         $judul_skripsi = TRUE;
         include ('part/sidebar.php');
 
+    }elseif($_GET['action'] == "dosen-pembimbing"){
+        $title = '<i class="pe-7s-users"></i> Dosen Pembimbing';
+        $dosen_pembimbing = TRUE;
+        include ('part/sidebar.php');
+
     }else{
         echo 'sidebar not found';
     }
@@ -82,6 +87,9 @@ include ('part/navbar.php');
 
         }elseif($_GET['action'] == "ajukan-judul") {
             require "module/ajukan-judul.php";
+
+        }elseif($_GET['action'] == "dosen-pembimbing") {
+            require "module/dosen-pembimbing.php";
 
         }else{
             require "module/404.php";

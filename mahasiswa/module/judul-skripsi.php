@@ -23,6 +23,7 @@
       $status1     = $row['status_judul1'];
       $status2     = $row['status_judul2'];      
     } 
+                            error_reporting('0');     
                             //status judul 1    
                             if($status1 == '0')
                             {
@@ -61,7 +62,7 @@
                               $button2 = '<div class="alert alert-info text-center" style="background-color: #bb6f11;margin-top:20px">
                                             Status Tidak Diketahui
                                           </div>';
-                            }                                                                                                                        
+                            }                                                                                                                       
     //var data
     $nim = $_SESSION['nim'];
     //query checking
@@ -74,14 +75,13 @@
         <div class="content">
             <div class="container-fluid">
             <div class="row">
-            <?php if(isset($register) =='') { ?>
             <div class="col-md-12">
+            <?php if(isset($register) =='') { ?>
             <div class="panel panel-success" style="box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);">
               <div class="unwaha-padding panel-heading" style="color:#fff;background-color: #158873;border-color: #158873;"> <i class="pe-7s-note2"></i> Detail Pengajuan Judul</div>
                 <div class="panel-body">
-                    <a href="media.php?action=ajukan-judul" class="btn btn-success">Ajukan Judul Baru</a>
+                    <a href="media.php?action=ajukan-judul&token=<?php echo SHA1(MD5(SHA1(MD5($_SESSION['nim'])))) ?>" class="btn btn-success"><i class="pe-7s-note2"></i> Ajukan Judul Baru</a>
                 </div>
-              </div>
               </div>
             <?php }else{ ?>
 				    <div class="panel panel-success" style="box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);">
@@ -129,7 +129,7 @@
                               <tr>
                                 <td>Dosen Pembimbing</td>
                                 <td><?php $i=0;
-                                      foreach($kPembimbing as $pemb1){
+                                      foreach($kPembimbing1 as $pemb1){
                                         if($pembimbing1 == $i++)
                                           echo $pemb1;
                                         }
@@ -143,7 +143,7 @@
                             </tbody>
                           </table>  
                           </div> 
-                          <a href="media.php?action=edit-judul1&token=<?php echo base64_encode($_SESSION['nim']) ?>" type="button" class="btn btn-success" style="border-color: #158873;color: #158873;"><i class="pe-7s-config"></i> Ubah Data</a> 
+                          <a href="media.php?action=edit-judul1&token=<?php echo SHA1(MD5(SHA1(MD5($_SESSION['nim'])))) ?>" type="button" class="btn btn-success" style="border-color: #158873;color: #158873;"><i class="pe-7s-config"></i> Ubah Data</a> 
                           <br>
                           <br>
 
@@ -168,7 +168,7 @@
                               <tr>
                                 <td>Dosen Pembimbing</td>
                                 <td><?php $i=0;
-                                      foreach($kPembimbing as $pemb2){
+                                      foreach($kPembimbing2 as $pemb2){
                                         if($pembimbing2 == $i++)
                                           echo $pemb2;
                                         }
@@ -182,10 +182,11 @@
                             </tbody>
                           </table>     
                           </div>                           
-                          <a href="media.php?action=edit-judul2&token=<?php echo base64_encode($_SESSION['nim']) ?>" type="button" class="btn btn-success" style="border-color: #158873;color: #158873;"><i class="pe-7s-config"></i> Ubah Data</a>
+                          <a href="media.php?action=edit-judul2&token=<?php echo MD5(SHA1(MD5(SHA1($_SESSION['nim'])))) ?>" type="button" class="btn btn-success" style="border-color: #158873;color: #158873;"><i class="pe-7s-config"></i> Ubah Data</a>
                         </div> 
                       </div>
                       <?php } ?> 
+                      </div>
                     </div>
                 </div>
             </div>
