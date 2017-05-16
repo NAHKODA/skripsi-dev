@@ -26,18 +26,13 @@
                         <p>Judul Saya</p>
                     </a>
                 </li>
-                <li <?php if(isset($daftar_judul)){ echo 'class="active"'; }?>>
-                    <a href="media.php?action=daftar-judul">
-                        <i class="pe-7s-note2"></i>
-                        <p>Daftar Judul</p>
-                    </a>
-                </li>               
+                         
                 <li <?php if(isset($dosen_pembimbing)){ echo 'class="active"'; }?>>
                     <a href="media.php?action=dosen-pembimbing">
                         <i class="pe-7s-users"></i>
                         <p>Daftar Pembimbing </p>
                     </a>
-                </li>                
+                </li>
                 <li class="active-pro">
                     <a href="conf/logout.php">
                         <i class="pe-7s-power"></i>

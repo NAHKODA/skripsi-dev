@@ -1,7 +1,7 @@
-<?php 
+<?php
 	session_start();
 	//include config
-	include_once('../../library/config.php');	
+	include_once('../../library/config.php');
 	//include environment
 	include('../../library/environment.php');
 	//include database
@@ -27,15 +27,17 @@
 			$_POST['prodi'],
 			$_POST['kelas'],
 			$_POST['pembimbing1'],
-			$_POST['pembimbing2']);
+			$_POST['pembimbing2']
+		);
+
 
 		if(!$s->execute())
 		{
 			header('Location:../media.php?action=dashboard');
 		}else{
-			header('Location:../media.php?action=ajukan-judul');
+			header('Location:../media.php?action=dashboard');
 		}
-		
+
 	}else{
 		header('Location:media.php?action=ajukan-judul');
 		exit;

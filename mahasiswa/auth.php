@@ -1,24 +1,22 @@
 <?php
 require_once('../library/environment.php');
-require_once('library/database.php');
+require_once('../library/database.php');
 
 $username = $_POST['username'];
 $password = $_POST['password'];
 
 
-$query 	  = mysqli_query($connect,"SELECT * FROM view_mahasiswa WHERE username = '$username' AND password = '$password'");
-$row  	  = mysqli_fetch_array($query);	
+$query 	  = mysqli_query($connect,"SELECT * FROM tbl_mahasiswa WHERE nim = '$username' AND password = '$password'");
+$row  	  = mysqli_fetch_array($query);
 
-if ($row['username'] == $username AND $row['password'] == $password){
+if ($row['nim'] == $username AND $row['password'] == $password){
 
 	session_start();
 
-	$_SESSION['nim'] 		= $row['nim'];
-	$_SESSION['username'] 	= $row['username'];
+	$_SESSION['nim'] 			  = $row['nim'];
 	$_SESSION['password'] 	= $row['password'];
 	$_SESSION['nama_mhs'] 	= $row['nama_mhs'];
-	$_SESSION['prodi']		= $row['kode_jurusan'];
-	$_SESSION['email'] 		= $row['email'];
+	$_SESSION['prodi']			= $row['kode_jurusan'];
 
 	header('location:media.php?action=dashboard');
 

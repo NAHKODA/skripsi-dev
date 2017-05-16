@@ -1,15 +1,15 @@
-<?php 
+<?php
 session_start();
-if (empty($_SESSION['username'] && $_SESSION['password'])) {
+if (empty($_SESSION['nim'] && $_SESSION['password'])) {
   header('location:index.php');
 }
 
 /* create environment */
 include ('../library/environment.php');
-/* end environment */ 
+/* end environment */
 
 /*db*/
-include('./library/database.php');
+include('../library/database.php');
 /*/
 
 /* start get config */

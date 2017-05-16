@@ -1,4 +1,4 @@
-<?php 
+<?php
 error_reporting(0);
 session_start();
 if (!empty($_SESSION['username'] && $_SESSION['password'])) {
@@ -27,9 +27,9 @@ if (!empty($_SESSION['username'] && $_SESSION['password'])) {
   <body>
       <div id="login-page">
         <div class="container">
-              
-              <form class="form-login" action="auth.php" method="POST" style="margin-top:200px">
-                <h2 class="form-login-heading">sign in now</h2>
+
+              <form class="form-login" action="auth.php" method="POST" style="margin-top:120px">
+                  <h2 class="form-login-heading"><img src="../assets/img/logo-unwaha.png" style="width;150px ;height:150px"></h2>
                 <div class="login-wrap">
                 <?php echo $error; ?>
                     <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
@@ -38,15 +38,15 @@ if (!empty($_SESSION['username'] && $_SESSION['password'])) {
                     <label class="checkbox">
                         <span class="pull-right">
                             <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
-        
+
                         </span>
                     </label>
                     <button class="btn btn-theme btn-block" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
-        
+
                 </div>
-        
-              </form>       
-        
+
+              </form>
+
         </div>
       </div>
     <script src="<?php echo $config['base_url'] ?>../assets/media/js/jquery.js"></script>

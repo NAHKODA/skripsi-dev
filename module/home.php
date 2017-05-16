@@ -1,3 +1,20 @@
+<?php
+	//include config
+	include_once('./library/config.php');
+	//include environment
+	include('./library/environment.php');
+	//include database
+	include('./library/database.php');
+	//query select where nim
+	$query = "SELECT * FROM tbl_informasi";
+	$result =  mysqli_query($connect, $query);
+    while ($row = mysqli_fetch_array($result)) {
+      $id            = $row['id'];
+    	$judul 			   = $row['judul'];
+    	$content 			 = $row['isi_informasi'];
+    }
+
+?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron" style="background-image: url('<?php echo $config['base_url'] ?>assets/img/bg.png'); position:relative;background-color:#1abc9c">
       <div class="container" style="color:#fff">
@@ -12,21 +29,14 @@
       <div class="row">
         <div class="col-md-12">
           <div class="panel panel-default">
-            <div class="panel-heading" style="color: #fff;background-color: #16a085;border-color:#16a085;font-family: 'ubuntu'; font-weight:bold;font-size:35px">
-              <h3 class="panel-title">INFORMASI SKRIPSI FTI UNWAHA Tahun Akademik 2015/2016</h3>
+            <div class="panel-heading" style="color: #fff;background-color: #0f8870;border-color:#0f8870;font-family: 'ubuntu'; font-weight:bold;font-size:35px">
+              <h3 class="panel-title"><i class="fa fa-bell"></i> <?php echo $judul ?> </h3>
             </div>
             <div class="panel-body">
-              Panel content
+
+              <?php echo $content ?>
             </div>
           </div>
-          <div class="panel panel-default">
-            <div class="panel-heading" style="color: #fff;background-color: #16a085;border-color:#16a085;font-family: 'ubuntu'; font-weight:bold;font-size:35px">
-              <h3 class="panel-title">JADWAL SKRIPSI FTI UNWAHA Tahun Akademik 2015/2016</h3>
-            </div>
-            <div class="panel-body">
-              <?php include('module/informasi.php') ?>
-            </div>
-          </div>          
         </div>
       </div>
 

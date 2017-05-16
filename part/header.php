@@ -17,7 +17,7 @@
     <script src="<?php echo $config['base_url'] ?>assets/js/ie-emulation-modes-warning.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #16a085;border-color: #16a085;color: #fff;font-family: 'Lato'; font-weight:bold;font-size:18px">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #0f8870;border-color: #0f8870;color: #fff;font-family: 'Lato'; font-weight:bold;font-size:17px">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -33,7 +33,9 @@
               <li><a href="index.php?action=semua-judul" style="color:#fff"><i class="fa fa-folder-open-o"></i> Semua Judul</a></li>
               <li><a href="index.php?action=teknik-informatika" style="color:#fff"><i class="fa fa-folder-open-o"></i> Teknik Informatika</a></li>
               <li><a href="index.php?action=sistem-informasi" style="color:#fff"><i class="fa fa-folder-open-o"></i> Sistem Informasi</a></li>
-              <li><a href="index.php?action=statistik" style="color:#fff"><i class="fa fa-pie-chart"></i> Statistik</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="mahasiswa/" style="color:#fff"><i class="fa fa-lock"></i> Masuk Mahasiswa</a></li>
             </ul>
         </div>
       </div>

@@ -1,11 +1,11 @@
-<?php 
+<?php
 session_start();
 if (empty($_SESSION['username'] && $_SESSION['password'])) {
   header('location:index.php');
 }
 /* create environment */
 include ('../library/environment.php');
-/* end environment */ 
+/* end environment */
 
 /*db*/
 include('../library/database.php');
@@ -32,9 +32,29 @@ if(!isset($_GET['action'])){
         $profile = TRUE;
         include ('part/sidebar.php');
 
-    }elseif($_GET['action'] == "data-trace"){
-        $title = '<i class="pe-7s-server"></i> Data Trace';
-        $data_trace = TRUE;
+    }elseif($_GET['action'] == "data-mahasiswa"){
+        $title = '<i class="pe-7s-study"></i> Data Mahasiswa';
+        $mahasiswa = TRUE;
+        include ('part/sidebar.php');
+
+    }elseif($_GET['action'] == "tambah-mahasiswa"){
+        $title = '<i class="pe-7s-study"></i> Tambah Mahasiswa';
+        $mahasiswa = TRUE;
+        include ('part/sidebar.php');
+
+    }elseif($_GET['action'] == "edit-mahasiswa"){
+        $title = '<i class="pe-7s-study"></i> Edit Mahasiswa';
+        $mahasiswa = TRUE;
+        include ('part/sidebar.php');
+
+    }elseif($_GET['action'] == "data-pengajuan-judul"){
+        $title = '<i class="pe-7s-server"></i> Data Pengajuan Judul';
+        $data_judul = TRUE;
+        include ('part/sidebar.php');
+
+    }elseif($_GET['action'] == "informasi"){
+        $title = '<i class="pe-7s-note"></i> Informasi';
+        $informasi = TRUE;
         include ('part/sidebar.php');
 
     }else{
@@ -55,13 +75,32 @@ include ('part/navbar.php');
         }elseif($_GET['action'] == "profile") {
             require "module/profile.php";
 
-        }elseif($_GET['action'] == "data-trace") {
-            require "module/data.php";
+        //data judul
+        }elseif($_GET['action'] == "data-pengajuan-judul") {
+            require "module/data-pengajuan-judul.php";
 
-        }elseif($_GET['action'] == "hapus-data"){
-            require "module/hapus-data.php";
+        }elseif($_GET['action'] == "lihat-pengajuan-judul"){
+            require "module/lihat-pengajuan-judul.php";
 
-        }else{
+        //informasi
+        }elseif($_GET['action'] == "informasi"){
+            require "module/data-informasi.php";
+
+        //mahasiswa
+      }elseif($_GET['action'] == "data-mahasiswa"){
+            require "module/data-mahasiswa.php";
+
+        }elseif($_GET['action'] == "tambah-mahasiswa"){
+            require "module/tambah-mahasiswa.php";
+
+        }elseif($_GET['action'] == "edit-mahasiswa"){
+            require "module/edit-mahasiswa.php";
+
+        }elseif($_GET['action'] == "hapus-mahasiswa"){
+            require "module/hapus-mahasiswa.php";
+
+        //jadwal
+      }else{
             require "module/404.php";
         }
 	}
