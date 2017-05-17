@@ -47,6 +47,11 @@ if(!isset($_GET['action'])){
         $mahasiswa = TRUE;
         include ('part/sidebar.php');
 
+    }elseif($_GET['action'] == "hapus-mahasiswa"){
+        $title = '<i class="pe-7s-study"></i> Hapus Mahasiswa';
+        $mahasiswa = TRUE;
+        include ('part/sidebar.php');
+
     }elseif($_GET['action'] == "data-pengajuan-judul"){
         $title = '<i class="pe-7s-server"></i> Data Pengajuan Judul';
         $data_judul = TRUE;

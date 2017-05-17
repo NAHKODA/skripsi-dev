@@ -24,7 +24,7 @@
               //include database
               include('../library/database.php');
               //query select where nim
-              $query = "SELECT * FROM tbl_mahasiswa";
+              $query = "SELECT * FROM tbl_mahasiswa ORDER BY nim ASC";
               $result =  mysqli_query($connect, $query);
               $no = 1;
                 while ($row = mysqli_fetch_array($result)) {
@@ -35,8 +35,8 @@
                     <td><?php echo $row['nama_mhs']?></td>
                     <td><?php echo $row['semester']?></td>
                     <td class="text-center">
-                        <a href="" class="btn btn-sm btn-success"><i class="fa fa-edit"></i> Edit</a>
-                        <a href="" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Delete</a>
+                        <a href="media.php?action=edit-mahasiswa&nim=<?php echo $row['nim']?>&token=<?php echo SHA1(MD5(SHA1(MD5($row['nim'])))) ?>" class="btn btn-sm btn-success"><i class="fa fa-edit"></i> Edit</a>
+                        <a href="media.php?action=hapus-mahasiswa&nim=<?php echo $row['nim']?>&token=<?php echo SHA1(MD5(SHA1(MD5($row['nim'])))) ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Delete</a>
                     </td>
                   </tr>
 
