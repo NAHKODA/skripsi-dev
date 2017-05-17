@@ -36,7 +36,7 @@
                     <td><?php echo $row['semester']?></td>
                     <td class="text-center">
                         <a href="media.php?action=edit-mahasiswa&nim=<?php echo $row['nim']?>&token=<?php echo SHA1(MD5(SHA1(MD5($row['nim'])))) ?>" class="btn btn-sm btn-success"><i class="fa fa-edit"></i> Edit</a>
-                        <a href="media.php?action=hapus-mahasiswa&nim=<?php echo $row['nim']?>&token=<?php echo SHA1(MD5(SHA1(MD5($row['nim'])))) ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Delete</a>
+                        <a href="module/hapus-mahasiswa.php?&nim=<?php echo $row['nim']?>&token=<?php echo SHA1(MD5(SHA1(MD5($row['nim'])))) ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Delete</a>
                     </td>
                   </tr>
 

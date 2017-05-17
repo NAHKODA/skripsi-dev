@@ -35,7 +35,7 @@
                     <td><?php echo $row['mahasiswa']?></td>
                     <td><?php echo $row['judul1']?></td>
                     <td><?php echo $row['judul2']?></td>
-                    <td><a href="" class="btn btn-sm btn-success"><i class="fa fa-external-link"></i> Lihat Detail</a></td>
+                    <td><a href="media.php?action=lihat-judul&nim=<?php echo $row['nim']?>&token=<?php echo SHA1(MD5(SHA1(MD5($row['nim'])))) ?>" class="btn btn-sm btn-success"><i class="fa fa-external-link"></i> Lihat Detail</a></td>
                   </tr>
 
                 <?php

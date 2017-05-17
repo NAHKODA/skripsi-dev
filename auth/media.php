@@ -57,6 +57,11 @@ if(!isset($_GET['action'])){
         $data_judul = TRUE;
         include ('part/sidebar.php');
 
+    }elseif($_GET['action'] == "lihat-judul"){
+        $title = '<i class="pe-7s-server"></i> Lihat Judul';
+        $data_judul = TRUE;
+        include ('part/sidebar.php');
+
     }elseif($_GET['action'] == "informasi"){
         $title = '<i class="pe-7s-note"></i> Informasi';
         $informasi = TRUE;
@@ -84,8 +89,8 @@ include ('part/navbar.php');
         }elseif($_GET['action'] == "data-pengajuan-judul") {
             require "module/data-pengajuan-judul.php";
 
-        }elseif($_GET['action'] == "lihat-pengajuan-judul"){
-            require "module/lihat-pengajuan-judul.php";
+        }elseif($_GET['action'] == "lihat-judul"){
+            require "module/lihat-judul.php";
 
         //informasi
         }elseif($_GET['action'] == "informasi"){

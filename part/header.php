@@ -12,6 +12,7 @@
     <link href="<?php echo $config['base_url'] ?>assets/fonts/fonts.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<?php echo $config['base_url'] ?>assets/css/font-awesome/css/font-awesome.css">
     <link href="<?php echo $config['base_url'] ?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo $config['base_url'] ?>assets/media/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="<?php echo $config['base_url'] ?>assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <link href="<?php echo $config['base_url'] ?>assets/css/jumbotron.css" rel="stylesheet">
     <script src="<?php echo $config['base_url'] ?>assets/js/ie-emulation-modes-warning.js"></script>
