@@ -39,7 +39,8 @@
     <script src="<?php echo $config['base_url'] ?>assets/media/js/demo.js"></script>
         <script type="text/javascript">
             $(function() {
-                $("#data-alumni").dataTable();
+                $("#data-pengajuan-judul").dataTable();
+                $("#data-mahasiswa").dataTable();
             });
         </script>
 </html>
