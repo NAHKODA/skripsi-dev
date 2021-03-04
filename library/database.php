@@ -11,7 +11,7 @@ if($environment == "development")
 
 	$dbhost = 'localhost';
 	$dbuser = 'root';
-	$dbpass = 'maulayyacyber17';
+	$dbpass = '';
 	$dbname = 'judul_skripsi';
 
 	// melakukan koneksi ke database
